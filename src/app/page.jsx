@@ -4,53 +4,64 @@ import books from "@/data/books.json";
 
 export default function Home() {
   return (
-    <div className="space-y-10">
+    <div className="max-w-[1200px] mx-auto px-4 space-y-10">
 
-      {/* Banner */}
+      {/* ================= HERO SECTION ================= */}
       <div className="hero min-h-[70vh] bg-base-200 rounded-xl">
         <div className="hero-content text-center">
           <div className="max-w-md">
+
             <h1 className="text-5xl font-bold">
               Find Your Next Read 📚
             </h1>
+
             <p className="py-6">
-              Explore thousands of books from different categories.
+              Explore thousands of books and build your knowledge step by step.
             </p>
+
             <Link href="/books" className="btn btn-primary">
-              Browse Now
+              Browse Books
             </Link>
+
           </div>
         </div>
       </div>
 
-      {/* Marquee */}
+      {/* ================= MARQUEE ================= */}
       <div className="bg-base-200 py-3 rounded-lg">
         <Marquee pauseOnHover speed={50}>
           📚 New Arrivals Available Now! &nbsp;&nbsp;&nbsp;
           🔥 20% Discount on Tech Books! &nbsp;&nbsp;&nbsp;
-          ⭐ Top Rated Books Weekly! &nbsp;&nbsp;&nbsp;
+          ⭐ Top Rated Books Updated Weekly! &nbsp;&nbsp;&nbsp;
+          🚀 Learn. Read. Grow! &nbsp;&nbsp;&nbsp;
         </Marquee>
       </div>
 
-      {/* Featured Books */}
+      {/* ================= FEATURED BOOKS ================= */}
       <div>
+
         <h2 className="text-3xl font-bold mb-5">
           Featured Books
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
-          {books.slice(0, 4).map((book) => (
+        {/* GRID: 3 per row on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {books.map((book) => (
             <div key={book.id} className="card bg-base-100 shadow-xl">
 
+              {/* IMAGE */}
               <figure>
                 <img
                   src={book.image_url}
                   alt={book.title}
-                  className="h-40 w-full object-cover"
+                  className="h-44 w-full object-cover"
                 />
               </figure>
 
+              {/* CONTENT */}
               <div className="card-body">
+
                 <h2 className="card-title text-lg">
                   {book.title}
                 </h2>
@@ -59,20 +70,28 @@ export default function Home() {
                   {book.author}
                 </p>
 
-                <div className="card-actions justify-end">
+                <p className="text-xs text-gray-400">
+                  {book.category}
+                </p>
+
+                <div className="card-actions justify-end mt-2">
+
                   <Link
                     href={`/books/${book.id}`}
                     className="btn btn-sm btn-primary"
                   >
                     Details
                   </Link>
+
                 </div>
 
               </div>
 
             </div>
           ))}
+
         </div>
+
       </div>
 
     </div>
