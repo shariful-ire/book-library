@@ -1,3 +1,55 @@
+
+The Folder Structure : 
+
+
+src/
+│
+├── app/
+│   ├── layout.jsx
+│   ├── page.jsx
+│
+│   ├── (auth)/
+│   │   ├── login/page.jsx
+│   │   ├── register/page.jsx
+│
+│   ├── books/
+│   │   ├── page.jsx
+│   │   ├── [id]/page.jsx
+│
+│   ├── profile/
+│   │   ├── page.jsx
+│   │   ├── update/page.jsx
+│
+│   ├── api/
+│       └── auth/[...all]/route.js
+│
+├── components/
+│   ├── shared/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │
+│   ├── books/
+│       ├── BookCard.jsx
+│       ├── BookDetails.jsx
+│
+├── providers/
+│   ├── AuthProvider.jsx
+│
+├── lib/
+│   ├── auth.js
+│
+├── hooks/
+│   ├── useAuth.js
+│
+├── data/
+│   ├── books.json
+│
+├── utils/
+│   ├── helpers.js
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
